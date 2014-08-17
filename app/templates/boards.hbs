@@ -1,0 +1,19 @@
+<h1>Boards</h1>
+{{#link-to 'boards.new' class="btn btn-primary"}}New Board{{/link-to}}
+{{ outlet }}
+<table class='table table-striped'>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each}}
+      <tr>
+        <td>{{owner}}/{{repo_name}}</td>
+        <td>View</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

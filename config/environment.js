@@ -13,8 +13,7 @@ module.exports = function(environment) {
     },
 
     APP: {
-      // Here you can pass flags/options to your application instance
-      // when it is created
+      firebase_instance_url: 'https://popping-fire-6456.firebaseio.com'
     }
   };
 

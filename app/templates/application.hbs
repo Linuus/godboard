@@ -1,3 +1,46 @@
-<h2 id='title'>Welcome to Ember.js</h2>
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Godboard</a>
+    </div>
 
-{{outlet}}
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="#navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        {{#link-to "index" tagName="li"}}
+            <a {{bind-attr href="view.href"}}>Home</a>
+        {{/link-to}}
+        {{#link-to "boards" tagName="li"}}
+            <a {{bind-attr href="view.href"}}>Boards</a>
+        {{/link-to}}
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Boards <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Board 1</a></li>
+            <li><a href="#">Board 2</a></li>
+            <li><a href="#">Board 3</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#" {{action "login" }}>Sign in</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class='container-fluid'>
+  <div class='row'>
+    <div class='col-md-12'>
+      {{outlet}}
+      {{outlet modal}}
+    </div>
+  </div>
+</div>
