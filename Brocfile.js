@@ -22,5 +22,6 @@ app.import("vendor/bootstrap/dist/css/bootstrap.css");
 
 app.import("vendor/firebase/firebase.js");
 app.import("vendor/emberfire/dist/emberfire.js");
+app.import('vendor/firebase-simple-login/firebase-simple-login.js');
 
 module.exports = app.toTree();
