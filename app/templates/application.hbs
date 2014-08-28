@@ -17,21 +17,20 @@
         {{#link-to "index" tagName="li"}}
             <a {{bind-attr href="view.href"}}>Home</a>
         {{/link-to}}
-        {{#link-to "boards" tagName="li"}}
-            <a {{bind-attr href="view.href"}}>Boards</a>
-        {{/link-to}}
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Boards <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Board 1</a></li>
-            <li><a href="#">Board 2</a></li>
-            <li><a href="#">Board 3</a></li>
-          </ul>
-        </li>
+        {{#if auth.authed}}
+          {{#link-to "boards" tagName="li"}}
+              <a {{bind-attr href="view.href"}}>Boards</a>
+          {{/link-to}}
+        {{/if}}
       </ul>
       <ul class="nav navbar-nav navbar-right">
         {{#if auth.authed}}
-          <li><a href="#" {{action 'logout' this}}>Logout</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{auth.currentUser.username}}<span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#" {{action 'logout' this}}>Logout</a></li>
+            </ul>
+          </li>
         {{else}}
           <li><a href="#" {{action 'login' this}}>Login</a></li>
         {{/if}}

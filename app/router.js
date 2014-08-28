@@ -8,7 +8,7 @@ Router.map(function() {
   this.resource('boards', function() {
     this.route('new');
   });
-  this.resource('board', { path: 'boards/:board_id' });
+  this.resource('board', { path: 'boards/:owner/:repo_name' });
 });
 
 export default Router;
