@@ -1,17 +1,25 @@
 body {
-  padding-top: 70px;
+  padding-top: 60px;
+}
+
+.swimlane {
+  max-width: 300px;
+  float: left;
+  margin-right: 20px;
 }
 
 .card {
   max-width: 280px;
 }
 
-.card .panel-heading {
-  white-space: nowrap;
-  overflow: hidden;
-}
-
 .card .panel-body {
   height: 80px;
   overflow: hidden;
+  position: relative;
+}
+
+.card .panel-body .delete-button {
+  position: absolute;
+  right: 4px;
+  top: 0;
 }

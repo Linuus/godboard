@@ -11,8 +11,8 @@
   <tbody>
     {{#each}}
       <tr>
-        <td>{{owner}}/{{repo_name}}</td>
-        <td>View</td>
+        <td>{{title}}</td>
+        <td>{{#link-to 'board' this}}View{{/link-to}}</td>
       </tr>
     {{/each}}
   </tbody>

@@ -1,14 +1,10 @@
 import Ember from 'ember';
 
-export default Ember.ArrayController.extend({
-  board: function() {
-    return this.store.createRecord('board');
-  }.property(),
+export default Ember.ObjectController.extend({
   actions: {
-    createBoard: function(repo) {
+    createBoard: function() {
       this.store.createRecord('board', {
-        owner: repo.owner.login,
-        repo_name: repo.name
+        title: this.get('title')
       }).save().then(function() {
         this.transitionToRoute('boards.index');
       }.bind(this));

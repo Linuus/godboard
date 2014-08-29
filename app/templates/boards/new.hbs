@@ -1,24 +1,15 @@
 <div class="row">
   <div class="col-md-12">
-    <h2>Pick a repo for your new board</h2>
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Issues</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#each}}
-          <tr>
-            <td>{{name}}</td>
-            <td>{{open_issues_count}}</td>
-            <td><a href="#" {{action 'createBoard' this}} class="btn btn-sm btn-primary pull-right">Create board</a></td>
-          </tr>
-        {{/each}}
-      </tbody>
-    </table>
+    <h2>Create board</h2>
+
+    <form {{action 'createBoard' on="submit"}}>
+      <div class="form-group">
+        <label for="title">Title</label>
+        {{input value=title class="form-control" placeholder="Board title"}}
+      </div>
+      <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+    
   </div>
 </div>
 <hr>
