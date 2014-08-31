@@ -9,9 +9,6 @@ Router.map(function() {
     this.route('new');
   });
   this.resource('board', { path: 'boards/:board_id' }, function() {
-    this.resource('cards', function() {
-      this.route('new');
-    });
   });
 });
 

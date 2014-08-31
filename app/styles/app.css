@@ -12,8 +12,9 @@ body {
   max-width: 280px;
 }
 
-.card:hover {
-  cursor: move;
+.card:hover, .swimlane:hover {
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
 }
 
 .card .panel-body {

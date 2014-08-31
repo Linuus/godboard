@@ -1,24 +1,18 @@
 import Ember from 'ember';
 
-export default Ember.ObjectController.extend({
-  needs: ['board'],
-  board: Ember.computed.alias('controllers.board'),
-  newCard: function() {
-    return this.store.createRecord('card');
-  }.property(),
+export default Ember.Controller.extend({
+  needs: ['swimlane'],
+  swimlane: Ember.computed.alias('controllers.swimlane'),
   actions: {
     createCard: function() {
-      var board = this.get('board.model');
-      var card = this.get('newCard');
-      var self = this;
+      debugger;
+      var card = this.store.createRecord('card', this.getProperties('body'));
+      var swimlane = this.get('swimlane.model');
 
-      card.set('board', board);
-      board.get('cards').addObject(card);
+      card.set('swimlane', swimlane);
+      swimlane.get('cards').addObject(card);
       card.save().then(function() {
-        board.save().then(function() {
-          self.set('newCard', self.store.createRecord('card'));
-          self.transitionToRoute('board', board.get('id'));
-        });
+        swimlane.save();
       });
     }
   }

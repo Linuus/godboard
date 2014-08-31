@@ -1,0 +1,15 @@
+<div class="panel panel-default swimlane">
+  <div class="panel-heading">
+    <h5 class="panel-title">{{title}}</h5>
+    <a href="#" {{action 'deleteSwimlane'}} class="delete-button">&times;</a>
+  </div>
+  <div class="panel-body">
+    {{#each card in cards}}
+      {{view "card" contentBinding='card'}}
+    {{/each}}
+  </div>
+  <div class="panel-footer">
+    {{ render 'cards/new' }}
+  </div>
+</div>
+
