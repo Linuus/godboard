@@ -4,12 +4,7 @@
   </div>
   <div class="panel-body">
     {{#each}}
-      <div class="panel panel-default card">
-        <div class="panel-body">
-          <a href="#" {{action 'deleteCard' this}} class="delete-button">&times;</a>
-          {{body}}
-        </div>
-      </div>
+      {{view "card" contentBinding='this'}}
     {{/each}}
   </div>
   <div class="panel-footer">

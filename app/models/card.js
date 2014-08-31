@@ -7,4 +7,5 @@ export default DS.Model.extend({
     defaultValue: function() { return new Date(); }
   }),
   board: DS.belongsTo('board', { async: true }),
+  swimlane: DS.belongsTo('swimlane', { async: true })
 });

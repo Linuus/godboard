@@ -3,7 +3,7 @@ body {
 }
 
 .swimlane {
-  max-width: 300px;
+  width: 300px;
   float: left;
   margin-right: 20px;
 }
@@ -12,10 +12,19 @@ body {
   max-width: 280px;
 }
 
+.card:hover {
+  cursor: move;
+}
+
 .card .panel-body {
   height: 80px;
   overflow: hidden;
   position: relative;
+}
+
+.dragging .card {
+  box-shadow: 2px 2px 6px rgba(0,0,0,.2);
+  opacity: .3;
 }
 
 .card .panel-body .delete-button {
