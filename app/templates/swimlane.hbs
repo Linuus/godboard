@@ -4,9 +4,7 @@
     <a href="#" {{action 'deleteSwimlane'}} class="delete-button">&times;</a>
   </div>
   <div class="panel-body">
-    {{#each card in cards}}
-      {{view "card" contentBinding='card'}}
-    {{/each}}
+    {{render 'cards/index' cards }}
   </div>
   <div class="panel-footer">
     {{ render 'cards/new' }}

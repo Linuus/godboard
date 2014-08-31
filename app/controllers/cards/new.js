@@ -5,9 +5,8 @@ export default Ember.Controller.extend({
   swimlane: Ember.computed.alias('controllers.swimlane'),
   actions: {
     createCard: function() {
-      debugger;
       var card = this.store.createRecord('card', this.getProperties('body'));
-      var swimlane = this.get('swimlane.model');
+      var swimlane = this.parentController.get('model');
 
       card.set('swimlane', swimlane);
       swimlane.get('cards').addObject(card);

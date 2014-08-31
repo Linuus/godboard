@@ -1,13 +1,3 @@
-<div class="panel panel-default swimlane">
-  <div class="panel-heading">
-    <h5 class="panel-title">Icebox</h5>
-  </div>
-  <div class="panel-body">
-    {{#each}}
-      {{view "card" contentBinding='this'}}
-    {{/each}}
-  </div>
-  <div class="panel-footer">
-    {{ render 'cards/new' }}
-  </div>
-</div>
+{{#each itemController="card"}}
+  {{view "card" contentBinding='this'}}
+{{/each}}

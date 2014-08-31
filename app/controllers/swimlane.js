@@ -10,7 +10,12 @@ export default Ember.ObjectController.extend({
       board.get('swimlanes').then(function(swimlanes) {
         swimlanes.removeObject(swimlane);
         board.save();
-        swimlane.destroyRecord();
+        swimlane.get('cards').then(function(cards) {
+          cards.forEach(function(card) {
+            card.destroyRecord();
+          });
+          swimlane.destroyRecord();
+        });
       });
     }
   }

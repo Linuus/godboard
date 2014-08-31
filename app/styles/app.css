@@ -17,6 +17,10 @@ body {
   cursor: -moz-grab;
 }
 
+.swimlane .panel-heading {
+  position: relative;
+}
+
 .card .panel-body {
   height: 80px;
   overflow: hidden;
@@ -26,6 +30,12 @@ body {
 .dragging .card {
   box-shadow: 2px 2px 6px rgba(0,0,0,.2);
   opacity: .3;
+}
+
+.swimlane .panel-heading .delete-button {
+  position: absolute;
+  right: 10px;
+  top: 5px;
 }
 
 .card .panel-body .delete-button {
