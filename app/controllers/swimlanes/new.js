@@ -12,6 +12,7 @@ export default Ember.Controller.extend({
       swimlane.save().then(function() {
         board.save();
       });
+      this.set('title', '');
     }
   }
 });
